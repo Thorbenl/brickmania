@@ -21,3 +21,8 @@ Visit it under http://localhost:3000/
 ### Data
 
 This wont come with data out of the box, so please create a superuser with above command, and head to http://0.0.0.0:8000/bricks/, tap login on the top right and login. afterwards, you can create some bricks via the UI
+
+### Maybe later...
+
+- Unit tests and integration tests for the backend, left out due to time.
+- Find a type generator so we can generate an OpenAPI spec from the backend, so the frontend does not have to bother with creating its on types
