@@ -1,8 +1,21 @@
 version: '3.9'
 
 services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://postgres:postgres@db/postgres
   db:
     image: postgres:15.1-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
     command: postgres -c 'max_connections=400'
     environment:
       POSTGRES_USER: postgres
@@ -10,3 +23,7 @@ services:
       POSTGRES_PASSWORD: postgres
     ports:
       - "5432:5432"
+
+
+volumes:
+  postgres_data:
