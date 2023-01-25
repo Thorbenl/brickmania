@@ -1,0 +1,13 @@
+django==4.1.5
+django-simple-history==3.2.0
+psycopg2-binary
+gunicorn==20.1.0
+django-debug-toolbar
+ipython
+dj-database-url
+whitenoise
+djangorestframework
+markdown
+django-filter
+PyYAML
+django-cors-headers
